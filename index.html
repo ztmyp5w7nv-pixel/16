@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#170f12" />
+    <title>Gecelerde Şiiri | Erzurumlu İbrahim Hakkı Hz.</title>
+    <link rel="preload" href="./siir16.mp3" as="audio" type="audio/mpeg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="is-locked">
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+      <div class="glow glow-c"></div>
+      <div class="grain"></div>
+    </div>
+
+    <button class="start-screen" id="startScreen" type="button">
+      <span class="start-screen__frame"></span>
+      <span class="start-screen__eyebrow">Şiir Sunumu</span>
+      <strong class="start-screen__title">Gecelerde<br />Şiiri</strong>
+      <span class="start-screen__meta">Erzurumlu İbrahim Hakkı Hz. • 01:18</span>
+      <span class="start-screen__hint">Şiiri başlatmak için ekrana dokun</span>
+      <span class="start-screen__note">
+        Mobil tarayıcılar sesli otomatik başlatmayı engellediği için ilk dokunuş gerekiyor.
+      </span>
+    </button>
+
+    <audio id="poemAudio" src="./siir16.mp3" preload="auto" loop playsinline></audio>
+
+    <main class="app">
+      <section class="hero">
+        <div class="hero__topline">
+          <span class="pill">Erzurumlu İbrahim Hakkı Hz.</span>
+          <span class="pill">Tasavvuf Şiiri</span>
+          <span class="pill">01:18</span>
+        </div>
+
+        <div class="hero__copy">
+          <p class="eyebrow">Geceye dair ilahi düşünceler ve ruhsal davet</p>
+          <h1>Gecelerde<br />Şiiri</h1>
+          <p class="intro">
+            Şiir tek dokunuşla başlar, döngüde devam eder ve geceye ait dizeler akış kartlarında parıldar.
+          </p>
+        </div>
+
+        <section class="player-card" aria-label="Şiir oynatıcısı">
+          <div class="player-card__halo"></div>
+          <div class="player-card__header">
+            <span class="player-card__label">Canlı akış</span>
+            <span class="player-card__status" id="playState">Başlatılmadı</span>
+          </div>
+
+          <div class="player-card__core">
+            <div class="orb">
+              <svg class="progress-ring" viewBox="0 0 180 180" aria-hidden="true">
+                <circle class="progress-ring__track" cx="90" cy="90" r="74"></circle>
+                <circle class="progress-ring__value" cx="90" cy="90" r="74"></circle>
+              </svg>
+              <div class="orb__center">
+                <span class="orb__label">Süre</span>
+                <strong id="currentTime">00:00</strong>
+                <span id="totalTime">01:18</span>
+              </div>
+            </div>
+
+            <div class="equalizer" id="equalizer" aria-hidden="true"></div>
+          </div>
+
+          <div class="controls">
+            <button class="control-button" id="soundToggle" type="button">Sesi Kapat</button>
+            <button class="control-button control-button--ghost" id="restartButton" type="button">
+              Baştan Sar
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="lyrics">
+        <div class="section-title">
+          <p class="eyebrow">Şiirin sözleri</p>
+          <h2>Zaman damgaları çıkarıldı, sözler 9 akış kartına bölündü</h2>
+        </div>
+
+        <div class="verses" id="verses">
+          <article class="verse-card is-active" data-start="0" data-end="9" style="--delay: 0s;">
+            <span class="verse-card__index">I</span>
+            <p>Uyku gel uyan gecelerde</p>
+            <p>kevkeplerin et seyrini Seyran gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="9" data-end="17" style="--delay: 0.6s;">
+            <span class="verse-card__index">II</span>
+            <p>Bak heyet-i âlemde bu hikmetleri seyret</p>
+            <p>bul seniğini ol ona hayran gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="17" data-end="25" style="--delay: 1.2s;">
+            <span class="verse-card__index">III</span>
+            <p>düşün gündüz olursun nice ağlar ile</p>
+            <p>Gafil koy gafleti dildardan utan Gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="25" data-end="34" style="--delay: 1.8s;">
+            <span class="verse-card__index">IV</span>
+            <p>gafletle uyumak nereye ve abdulhakıra şefkatle</p>
+            <p>Nida eyle Rahman gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="34" data-end="42" style="--delay: 2.4s;">
+            <span class="verse-card__index">V</span>
+            <p>cümle geceyi uyuma kayıyor mu</p>
+            <p>seversen Taha'yı olasın Hay ile ey can gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="42" data-end="51" style="--delay: 3s;">
+            <span class="verse-card__index">VI</span>
+            <p>Aşıklar uyumaz gece</p>
+            <p>Hem sen uyuma kim gönlün gözüne gözüne ey can Gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="51" data-end="59" style="--delay: 3.6s;">
+            <span class="verse-card__index">VII</span>
+            <p>dil beyti hüdadır onu</p>
+            <p>Paka ile şifadan kasrına nüzul eyler o Sultan Gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="59" data-end="68" style="--delay: 4.2s;">
+            <span class="verse-card__index">VIII</span>
+            <p>Az ye az uyu hayrete var</p>
+            <p>Fani ol ondan bulacağını Beka ol ona ihan Gecelerde</p>
+          </article>
+
+          <article class="verse-card" data-start="68" data-end="78" style="--delay: 4.8s;">
+            <span class="verse-card__index">IX</span>
+            <p>Allah için ol halka mukarin gece gündüz</p>
+            <p>Ey Hakkı nihan-ı Aşk ödüne yan gecelerde</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
